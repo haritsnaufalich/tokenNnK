@@ -1,7 +1,7 @@
 from json import JSONDecoder
 import requests
 
-# NKT Function
+# NKT Functions
 def getNKT(Query):
   NKT = s.get('https://ninokuni.marblex.io/api/price?tokenType=NKT')
   NKT = JSONDecoder().decode(NKT.text)
@@ -33,9 +33,9 @@ def printNKT():
   else:
     print(' [+] Changes       : ' + '\033[91m' + str(abs(int(getNKT('percentMajor')))) + '.' + str(getNKT('percentMinor')[0:2]) + '%' + '\033[0m' + ' (-)')
   if (int(getExchangeNKT('increaseExchangeRate')) > 0):
-    print(' [+] Exchange Rate : ' + str(getExchangeNKT('exchangeRate')) + ' (' + '\033[92m' + str(getExchangeNKT('increaseExchangeRate')) + '\033[0m' + ')')
+    print(' [+] Exchange Rate : ' + str(getExchangeNKT('exchangeRate')) + ' (' + '\033[92m' + str(abs(int(getExchangeNKT('increaseExchangeRate')))) + '\033[0m' + ')')
   elif (int(getExchangeNKT('increaseExchangeRate')) == 0):
-    print(' [+] Exchange Rate : ' + str(getExchangeNKT('exchangeRate')) + ' (' + '\033[96m' + str(getExchangeNKT('increaseExchangeRate')) + '\033[0m' + ')')
+    print(' [+] Exchange Rate : ' + str(getExchangeNKT('exchangeRate')) + ' (' + '\033[96m' + str(abs(int(getExchangeNKT('increaseExchangeRate')))) + '\033[0m' + ')')
   else:
     print(' [+] Exchange Rate : ' + str(getExchangeNKT('exchangeRate')) + ' (' + '\033[91m' + str(abs(int(getExchangeNKT('increaseExchangeRate')))) + '\033[0m' + ')')
 
@@ -49,9 +49,9 @@ def printNKA():
   else:
     print(' [+] Changes       : ' + '\033[91m' + str(abs(int(getNKA('percentMajor')))) + '.' + str(getNKA('percentMinor')[0:2]) + '%' + '\033[0m' + ' (-)')
   if (int(getExchangeNKA('increaseExchangeRate')) > 0):
-    print(' [+] Exchange Rate : ' + str(getExchangeNKA('exchangeRate')) + ' (' + '\033[92m' + str(getExchangeNKA('increaseExchangeRate')) + '\033[0m' + ')')
+    print(' [+] Exchange Rate : ' + str(getExchangeNKA('exchangeRate')) + ' (' + '\033[92m' + str(abs(int(getExchangeNKA('increaseExchangeRate')))) + '\033[0m' + ')')
   elif (int(getExchangeNKA('increaseExchangeRate')) == 0):
-    print(' [+] Exchange Rate : ' + str(getExchangeNKA('exchangeRate')) + ' (' + '\033[96m' + str(getExchangeNKA('increaseExchangeRate')) + '\033[0m' + ')')
+    print(' [+] Exchange Rate : ' + str(getExchangeNKA('exchangeRate')) + ' (' + '\033[96m' + str(abs(int(getExchangeNKA('increaseExchangeRate')))) + '\033[0m' + ')')
   else:
     print(' [+] Exchange Rate : ' + str(getExchangeNKA('exchangeRate')) + ' (' + '\033[91m' + str(abs(int(getExchangeNKA('increaseExchangeRate')))) + '\033[0m' + ')')
 
